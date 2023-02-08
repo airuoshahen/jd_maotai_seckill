@@ -167,7 +167,7 @@ class QrLogin:
             'User-Agent': self.spider_session.get_user_agent(),
             'Referer': 'https://passport.jd.com/new/login.aspx',
         }
-        resp = self.session.get(url=url, headers=headers, params=payload)
+        resp = self.session.get(url=url, headers=headers, params=payload, verify=False)
 
         if not response_status(resp):
             logger.info('获取二维码失败')
